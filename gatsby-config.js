@@ -1,8 +1,6 @@
-// const newsletterFeed = require(`./src/utils/newsletterFeed`);
-
 module.exports = {
-  // const { feed = true, feedTitle = `Minimal Blog - @lekoarts/gatsby-theme-minimal-blog` } = options
   siteMetadata: {
+    // here you can edit meta data used throughout the site
     siteTitle: `Lupin`,
     siteTitleAlt: `Minimal Blog - @lekoarts/gatsby-theme-minimal-blog`,
     siteHeadline: `Minimal Blog - Gatsby Theme from @lekoarts`,
@@ -15,14 +13,30 @@ module.exports = {
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog-core`,
-      // options,
+      options: {
+        navigation: [
+          {
+            title: `About`,
+            slug: `/about`,
+          },
+        ],
+        externalLinks: [
+          {
+            name: `Twitter`,
+            url: `https://twitter.com/lekoarts_de`,
+          },
+          {
+            name: `Instagram`,
+            url: `https://www.instagram.com/lekoarts.de/`,
+          },
+        ],
+      },
     },
     // feed && {
     //   resolve: `gatsby-plugin-feed`,
     //   // options: newsletterFeed(feedTitle),
     // },
     `gatsby-plugin-react-helmet`,
-    // `gatsby-plugin-typescript`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-theme-ui`,
   ],
