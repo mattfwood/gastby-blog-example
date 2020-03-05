@@ -23,9 +23,9 @@ module.exports = title => ({
             excerpt: post.excerpt,
             url: site.siteMetadata.siteUrl + post.slug,
             guid: site.siteMetadata.siteUrl + post.slug,
-            custom_elements: [{ "content:encoded": post.html }],
-          }
-        })
+            custom_elements: [{ 'content:encoded': post.html }],
+          };
+        });
       },
       query: `
         {
@@ -44,4 +44,4 @@ module.exports = title => ({
       title,
     },
   ],
-})
+});

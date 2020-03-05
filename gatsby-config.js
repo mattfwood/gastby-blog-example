@@ -1,4 +1,4 @@
-const newsletterFeed = require(`./src/utils/newsletterFeed`)
+// const newsletterFeed = require(`./src/utils/newsletterFeed`);
 
 module.exports = {
   // const { feed = true, feedTitle = `Minimal Blog - @lekoarts/gatsby-theme-minimal-blog` } = options
@@ -22,8 +22,8 @@ module.exports = {
     //   // options: newsletterFeed(feedTitle),
     // },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-typescript`,
+    // `gatsby-plugin-typescript`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-theme-ui`,
   ],
-}
+};

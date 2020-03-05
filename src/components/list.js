@@ -1,12 +1,8 @@
 /** @jsx jsx */
-import React from "react"
-import { jsx } from "theme-ui"
+import React from 'react';
+import { jsx } from 'theme-ui';
 
-type ListProps = {
-  children: React.ReactNode
-}
-
-const List = ({ children }: ListProps) => (
+const List = ({ children }) => (
   <section
     sx={{
       mb: [5, 5, 6],
@@ -17,6 +13,6 @@ const List = ({ children }: ListProps) => (
   >
     {children}
   </section>
-)
+);
 
-export default List
+export default List;

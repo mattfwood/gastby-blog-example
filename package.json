@@ -58,6 +58,8 @@
     "directory": "themes/gatsby-theme-minimal-blog"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-cratebind": "^3.0.7",
     "gatsby": "^2.19.28"
   }
 }

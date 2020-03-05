@@ -1,16 +1,9 @@
 /** @jsx jsx */
-import React from "react"
-import { jsx } from "theme-ui"
-import { Box } from "@theme-ui/components"
+import React from 'react';
+import { jsx } from 'theme-ui';
+import { Box } from '@theme-ui/components';
 
-type TitleProps = {
-  children?: React.ReactNode
-  as?: string
-  className?: string
-  text: string
-}
-
-const Title = ({ text, children, as = `h2`, className }: TitleProps) => (
+const Title = ({ text, children, as = `h2`, className }) => (
   <div
     sx={{
       justifyContent: `space-between`,
@@ -27,7 +20,13 @@ const Title = ({ text, children, as = `h2`, className }: TitleProps) => (
   >
     <Box
       as={as}
-      sx={{ fontWeight: `medium`, fontSize: [3, 4], fontFamily: `heading`, lineHeight: `heading`, color: `heading` }}
+      sx={{
+        fontWeight: `medium`,
+        fontSize: [3, 4],
+        fontFamily: `heading`,
+        lineHeight: `heading`,
+        color: `heading`,
+      }}
       className={className}
     >
       {text}
@@ -43,6 +42,6 @@ const Title = ({ text, children, as = `h2`, className }: TitleProps) => (
       {children}
     </div>
   </div>
-)
+);
 
-export default Title
+export default Title;
