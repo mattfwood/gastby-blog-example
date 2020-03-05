@@ -2,6 +2,7 @@
 import React from 'react';
 import loadable from '@loadable/component';
 import theme from 'prism-react-renderer/themes/nightOwl';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import useMinimalBlogConfig from '../hooks/use-minimal-blog-config';
 
 const LazyHighlight = loadable(async () => {
@@ -11,17 +12,17 @@ const LazyHighlight = loadable(async () => {
   return props => <Highlight {...defaultProps} {...props} />;
 });
 
-const LazyLiveProvider = loadable(async () => {
-  const Module = await import(`react-live`);
-  const { LiveProvider, LiveEditor, LiveError, LivePreview } = Module;
-  return props => (
+const LazyLiveProvider = props => {
+  // const Module = await import(`react-live`);
+  // const { LiveProvider, LiveEditor, LiveError, LivePreview } = Module;
+  return (
     <LiveProvider {...props}>
       <LiveEditor data-name="live-editor" />
       <LiveError />
       <LivePreview data-name="live-preview" />
     </LiveProvider>
   );
-});
+};
 
 function getParams(className = ``) {
   const [lang = ``, params = ``] = className.split(`:`);

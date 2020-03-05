@@ -12,7 +12,7 @@ export default {
     backgroundColor: tint(`primary`, 0.7),
   },
   '.prism-code': {
-    fontSize: 1,
+    fontSize: 2,
     padding: 3,
     webkitOverflowScrolling: `touch`,
     backgroundColor: `transparent`,
@@ -163,6 +163,7 @@ export default {
   },
   "[data-name='live-preview'], [data-name='live-editor']": {
     mx: [0, 0, 0, -3],
+    fontSize: 2,
   },
   '.token-line': {
     pr: 3,
