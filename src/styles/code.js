@@ -1,5 +1,7 @@
 import { tint } from '@theme-ui/color';
 
+const CODE_BACKGROUND_COLOR = 'rgb(1, 22, 39)';
+
 export default {
   "[data-name='live-editor']": {
     fontSize: 1,
@@ -9,7 +11,20 @@ export default {
   },
   "[data-name='live-preview']": {
     padding: t => `calc(${t.space[2]} + 10px) !important`,
-    backgroundColor: tint(`primary`, 0.7),
+    // backgroundColor: tint(`primary`, 0.7),
+    backgroundColor: CODE_BACKGROUND_COLOR,
+    borderTop: '1px solid var(--theme-ui-colors-divide,#2d3748)',
+    // backgroundColor: 'var(--theme-ui-colors-background,#2d3748)',
+    // color: 'var(--theme-ui-colors-text,#2d3748)',
+    fieldset: {
+      border: 0,
+    },
+    label: {
+      display: 'block',
+    },
+    input: {
+      display: 'block',
+    },
   },
   '.prism-code': {
     fontSize: 2,
@@ -30,7 +45,7 @@ export default {
     display: `inline-block`,
   },
   'p > code, li > code': {
-    bg: `rgb(1, 22, 39)`,
+    bg: CODE_BACKGROUND_COLOR,
     color: `rgb(214, 222, 235)`,
     px: 2,
     py: 1,
@@ -39,7 +54,7 @@ export default {
     fontSize: 1,
     position: `relative`,
     webkitOverflowScrolling: `touch`,
-    bg: `rgb(1, 22, 39)`,
+    bg: CODE_BACKGROUND_COLOR,
     overflow: `auto`,
     mx: [0, 0, 0, -3],
     '.token-line': {

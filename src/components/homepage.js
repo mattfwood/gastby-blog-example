@@ -20,7 +20,7 @@ const Homepage = ({ posts }) => {
       <section sx={{ mb: [5, 5, 7], p: { fontSize: [1, 2, 3], mt: 2 } }}>
         <Hero />
       </section>
-      <Title text="Latest Posts">
+      <Title text="Blog">
         <Link to={replaceSlashes(`/${basePath}/${blogPath}`)}>
           Read all posts
         </Link>
