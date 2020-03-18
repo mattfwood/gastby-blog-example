@@ -1,6 +1,11 @@
 ---
+layout: post
 title: Refactor Your Component's State with useReducer
-date: 2020-02-12
+spoiler: Create Actions to Simplify State
+date: '2020-02-12'
+image: img/reduce.jpg
+caption: 'Photo by [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com)'
+draft: false
 tags:
   - React
   - Programming
@@ -59,9 +64,7 @@ So instead of using 4 or 5 `useState` calls, we can use a reducer to create _act
 
 Let's start with this example of a login form:
 
-```jsx react-live
-const { useState } = React;
-
+```jsx
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -96,11 +99,11 @@ const LoginForm = () => {
       <fieldset disabled={isLoading}>
         <label>
           Email
-          <input value={email} onChange={e => setEmail(e.target.value)} />
+          <input value={email} onChange={e => setEmail(e.target.value)}>
         </label>
         <label>
           Password
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+          <input type="password" value={password} onChange={e => setPassword(e.target.value)}>
         </label>
         {errorMessage !== null && <div>{errorMessage}</div>}
         <button type="submit">Sign In</button>
@@ -108,8 +111,6 @@ const LoginForm = () => {
     </form>
   )
 }
-
-render(<LoginForm />)
 ```
 
 This is a fairly standard component pattern for something like a login form. It includes:
