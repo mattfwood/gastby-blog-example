@@ -64,7 +64,8 @@ So instead of using 4 or 5 `useState` calls, we can use a reducer to create _act
 
 Let's start with this example of a login form:
 
-```jsx
+```jsx react-live
+const { useState } = React;
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -78,11 +79,12 @@ const LoginForm = () => {
     setIsLoading(true);
 
     try {
-      // send data to your API
-      const response = await api.post('/login', { email, password })
+      // send data to your "API"
+      const response = await setTimeout(() => ({ data: 'success' }), 500)
 
       // if it's successful, set the data in state
       setData(response.data);
+      alert('Success')
     } catch (error) {
       // if something goes wrong, they shouldn't get stuck in the loading state
       setErrorMessage(error.message);
@@ -99,11 +101,18 @@ const LoginForm = () => {
       <fieldset disabled={isLoading}>
         <label>
           Email
-          <input value={email} onChange={e => setEmail(e.target.value)}>
+          <input
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
         </label>
         <label>
           Password
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)}>
+          <input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
         </label>
         {errorMessage !== null && <div>{errorMessage}</div>}
         <button type="submit">Sign In</button>
@@ -111,6 +120,8 @@ const LoginForm = () => {
     </form>
   )
 }
+
+render(<LoginForm />)
 ```
 
 This is a fairly standard component pattern for something like a login form. It includes:
